@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "856353081653",
+    "firebase_url": "https://outsidehacks-e9cc5.firebaseio.com",
+    "project_id": "outsidehacks-e9cc5",
+    "storage_bucket": "outsidehacks-e9cc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856353081653:android:3eff8f95ca7c524e",
+        "android_client_info": {
+          "package_name": "com.neelk.outsidehacks2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856353081653-lr4oml476p5u33i80u05ugurscuriuek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neelk.outsidehacks2018",
+            "certificate_hash": "57b9373c5cc5ff8dc75f05508b50c25300478454"
+          }
+        },
+        {
+          "client_id": "856353081653-6mqdb32675krmsisg7309ek0j5ugpj0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPQYhpJgcnc64smiHwVHZkb1_gDTuXrN4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856353081653-6mqdb32675krmsisg7309ek0j5ugpj0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
