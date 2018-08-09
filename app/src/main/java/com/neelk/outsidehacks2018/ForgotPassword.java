@@ -50,7 +50,7 @@ public class ForgotPassword extends AppCompatActivity {
 
 
                                             } else {
-                                                Toast.makeText(ForgotPassword.this, "Password Reset Failed, Please enter the email address your signed up with.", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(ForgotPassword.this, "Password Reset Failed, Please enter the email address you signed up with.", Toast.LENGTH_SHORT).show();
                                             }
                                         }
 

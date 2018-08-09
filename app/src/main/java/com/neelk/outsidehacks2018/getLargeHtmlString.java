@@ -17,8 +17,7 @@ public class getLargeHtmlString {
     public static void setRandArtistAndTitle(){
 
     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-
-       StrictMode.setThreadPolicy(policy);
+    StrictMode.setThreadPolicy(policy);
 
         String url = "http://www.cs.ubc.ca/~davet/music/bpm/" + BPM + ".html";
         String scrapeHtmlBigLine = null;

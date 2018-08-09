@@ -12,9 +12,8 @@ import java.util.Scanner;
 public class htmlParser {
 
     private static final String lineSeparator = System.getProperty("line.separator");
-    public static String randArtist, randTitle;
-    private static ArrayList<String> artists;
-    private static ArrayList<String> titles;
+    public static String randArtist, randTitle, randGenre;
+    private static ArrayList<String> artists, titles, genres;
 
 
 

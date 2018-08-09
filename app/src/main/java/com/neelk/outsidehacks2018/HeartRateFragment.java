@@ -75,6 +75,8 @@ public class HeartRateFragment extends Fragment {
     private static Sensor heartRateSensor;
     public static int BPM = 0;
     private Button playMusic;
+    private static SensorManager sensorManager;
+    private static Context context;
 
     public HeartRateFragment() {
         // Required empty public constructor
@@ -89,7 +91,6 @@ public class HeartRateFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
 
     }
@@ -113,9 +114,10 @@ public class HeartRateFragment extends Fragment {
                 // we are unable to use any of our heart rate sensor methods as the emulator does not actually have any hardware or sensors
                 // so in order to demonstrate  the rest of our program's functionality we are simulating a heart rate
                 // our heart rate methods are below, commented out so they dont affect the code
-
-                simulateHeartRate(80, 150);
-                Toast.makeText(getActivity(), "Your heart rate is " + BPM + " bpm", Toast.LENGTH_SHORT).show();
+                  //  startActivity(new Intent(getActivity(), HeartRateMonitor.class));
+               // simulateHeartRate(40, 80);
+                //Toast.makeText(getActivity(), "Your heart rate is " + BPM + " bpm", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), getHeartRate.class));
 
             }
 
@@ -127,7 +129,25 @@ public class HeartRateFragment extends Fragment {
             public void onClick(View view) {
                 if (BPM == 0) {
                     Toast.makeText(getActivity(), "Please check your heart rate first and try again", Toast.LENGTH_SHORT).show();
-                } else {
+
+
+                } else if (BPM < 40) {
+                    BPM = 80;
+                    setRandArtistAndTitle();
+                    //Toast.makeText(getActivity(), randTitle + " by " + randArtist, Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getActivity(), PlayMusic.class));
+
+
+
+                }
+                else if(BPM < 80){
+                    BPM = BPM *2;
+                    setRandArtistAndTitle();
+                   // Toast.makeText(getActivity(), randTitle + " by " + randArtist, Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getActivity(), PlayMusic.class));
+
+                }
+                else {
                     //Toast.makeText(getActivity(), randArtist + " " + randTitle, Toast.LENGTH_LONG).show();
                     //Toast.makeText(getActivity(), )
 
@@ -142,9 +162,10 @@ public class HeartRateFragment extends Fragment {
                             }
                             */
 
-                              setRandArtistAndTitle();
+                    setRandArtistAndTitle();
+                    startActivity(new Intent(getActivity(), PlayMusic.class));
 
-                           Toast.makeText(getActivity(), randTitle + " by " + randArtist, Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getActivity(), randTitle + " by " + randArtist, Toast.LENGTH_LONG).show();
 
 
                 }

@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -44,19 +43,23 @@ android {
 // https://mvnrepository.com/artifact/com.cloudhopper/ch-commons-charset
         implementation group: 'com.cloudhopper', name: 'ch-commons-charset', version: '3.0.0'
         implementation "com.mashape.unirest:unirest-java:1.4.9"
-        implementation "org.apache.httpcomponents:httpasyncclient:4.0.2"
         testImplementation 'junit:junit:4.12'
         implementation 'com.google.firebase:firebase-core:16.0.0'
         implementation "org.jsoup:jsoup:1.9.1"
-        implementation ('org.apache.httpcomponents:httpmime:4.3.6') {
-            exclude module: 'httpcore'
-            exclude module: 'httpclient'
+        implementation('com.google.api-client:google-api-client-android:1.24.1') {
+            exclude group: 'org.apache.httpcomponents'
         }
-
+        implementation('com.google.apis:google-api-services-youtube:v3-rev204-1.24.1') {
+            exclude group: 'org.apache.httpcomponents'
+        }
         implementation 'com.android.volley:volley:1.1.1'
         androidTestImplementation 'com.android.support.test:runner:1.0.2'
         androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     }
 
     apply plugin: 'com.google.gms.google-services'
+}
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation files('libs/youtubeandroidplayer.jar')
 }

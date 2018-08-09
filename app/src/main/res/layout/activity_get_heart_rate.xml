@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".getHeartRate"
+    tools:layout_editor_absoluteY="81dp">
+
+    <Button
+        android:id="@+id/getHeartRateToHeartRateFragment"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="138dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="220dp"
+        android:fontFamily="@font/roboto_thin"
+        android:gravity="center"
+        android:text="Back"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/putFingerOnSensorTextView" />
+
+    <TextView
+        android:id="@+id/putFingerOnSensorTextView"
+        android:layout_width="399dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="208dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/roboto_thin"
+        android:gravity="center"
+        android:text="Place your finger on the heartbeat sensor to start"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/getHeartRateToHeartRateFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

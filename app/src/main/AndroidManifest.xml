@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.neelk.outsidehacks2018">
 
-
     <uses-feature
         android:name="android.hardware.camera2"
         android:required="true" />
@@ -12,12 +11,14 @@
     <uses-feature
         android:name="android.hardware.camera.autofocus"
         android:required="false" />
-    <uses-permission android:name="android.permission.INTERNET"/>
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/heartlogo"
         android:label="PVLSE"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -36,11 +37,12 @@
             android:label="Forgot Password" />
         <activity
             android:name=".Home"
-            android:label="Home" />
+            android:label="PVLSE" />
         <activity
             android:name=".SignUP"
             android:label="Sign Up" />
-
+        <activity android:name=".getHeartRate" />
+        <activity android:name=".PlayMusic"></activity>
     </application>
 
 </manifest>
