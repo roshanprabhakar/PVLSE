@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectGenre"
+    tools:layout_editor_absoluteY="81dp">
+
+    <CheckBox
+        android:id="@+id/countryCheckBox"
+        android:layout_width="109dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="27dp"
+        android:gravity="center"
+        android:text="Country"
+        app:layout_constraintBottom_toTopOf="@+id/rockCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classicalCheckBox" />
+
+    <CheckBox
+        android:id="@+id/rapCheckBox"
+        android:layout_width="127dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="27dp"
+        android:gravity="center"
+        android:text="Hip-Hop"
+        app:layout_constraintBottom_toTopOf="@+id/classicalCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/danceCheckBox" />
+
+    <CheckBox
+        android:id="@+id/classicalCheckBox"
+        android:layout_width="125dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="26dp"
+        android:gravity="center"
+        android:text="Classical"
+        app:layout_constraintBottom_toTopOf="@+id/countryCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rapCheckBox" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="3dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rnbCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/rnbCheckBox" />
+
+    <CheckBox
+        android:id="@+id/rockCheckBox"
+        android:layout_width="109dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="Rock"
+        app:layout_constraintBottom_toTopOf="@+id/rnbCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countryCheckBox" />
+
+    <CheckBox
+        android:id="@+id/danceCheckBox"
+        android:layout_width="112dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="19dp"
+        android:gravity="center"
+        android:text="Dance"
+        app:layout_constraintBottom_toTopOf="@+id/rapCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allCheckBox" />
+
+    <CheckBox
+        android:id="@+id/rnbCheckBox"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:gravity="center"
+        android:text="R &amp; B"
+        app:layout_constraintBottom_toTopOf="@+id/nextBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rockCheckBox" />
+
+    <CheckBox
+        android:id="@+id/allCheckBox"
+        android:layout_width="79dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginTop="84dp"
+        android:text="All"
+        app:layout_constraintBottom_toTopOf="@+id/danceCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

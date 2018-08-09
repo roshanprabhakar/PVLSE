@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import static com.neelk.outsidehacks2018.HeartRateFragment.BPM;
 import static com.neelk.outsidehacks2018.htmlParser.parseHTMLselectSONG;
+import static com.neelk.outsidehacks2018.htmlParser.randSongBasedOnGenres;
 
 public class getLargeHtmlString {
 
@@ -29,6 +30,7 @@ public class getLargeHtmlString {
         System.out.println(url);
         //System.out.println(scrapeHtmlBigLine);
         parseHTMLselectSONG(scrapeHtmlBigLine);
+        //System.out.println(scrapeHtmlBigLine);
 
 
 

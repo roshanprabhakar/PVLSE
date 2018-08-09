@@ -42,7 +42,8 @@
             android:name=".SignUP"
             android:label="Sign Up" />
         <activity android:name=".getHeartRate" />
-        <activity android:name=".PlayMusic"></activity>
+        <activity android:name=".PlayMusic" />
+        <activity android:name=".SelectGenre"></activity>
     </application>
 
 </manifest>

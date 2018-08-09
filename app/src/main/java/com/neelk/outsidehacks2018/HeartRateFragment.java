@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -77,6 +78,7 @@ public class HeartRateFragment extends Fragment {
     private Button playMusic;
     private static SensorManager sensorManager;
     private static Context context;
+    private static CheckBox checkBox;
 
     public HeartRateFragment() {
         // Required empty public constructor
@@ -101,10 +103,12 @@ public class HeartRateFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_heart_rate, container, false);
 
+
         final ConstraintLayout constraintLayout = view.findViewById(R.id.constraintLayout);
         final ConstraintLayout.LayoutParams lparams = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
         heartRateGetStartedButton = (Button) view.findViewById(R.id.measureHeartRateButton);
         playMusic = (Button) view.findViewById(R.id.playMusicButton);
+
 
         heartRateGetStartedButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,10 +136,10 @@ public class HeartRateFragment extends Fragment {
 
 
                 } else if (BPM < 40) {
-                    BPM = 80;
+                    BPM = 81;
                     setRandArtistAndTitle();
                     //Toast.makeText(getActivity(), randTitle + " by " + randArtist, Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(getActivity(), PlayMusic.class));
+                    startActivity(new Intent(getActivity(), SelectGenre.class));
 
 
 
@@ -144,10 +148,10 @@ public class HeartRateFragment extends Fragment {
                     BPM = BPM *2;
                     setRandArtistAndTitle();
                    // Toast.makeText(getActivity(), randTitle + " by " + randArtist, Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(getActivity(), PlayMusic.class));
+                    startActivity(new Intent(getActivity(), SelectGenre.class));
 
                 }
-                else {
+                else if (BPM == 80){
                     //Toast.makeText(getActivity(), randArtist + " " + randTitle, Toast.LENGTH_LONG).show();
                     //Toast.makeText(getActivity(), )
 
@@ -161,13 +165,17 @@ public class HeartRateFragment extends Fragment {
                                 Toast.makeText(getActivity(), "Answer in the Sky by Elton John", Toast.LENGTH_LONG).show();
                             }
                             */
-
-                    setRandArtistAndTitle();
-                    startActivity(new Intent(getActivity(), PlayMusic.class));
+                     BPM = 81;
+                   // setRandArtistAndTitle();
+                    startActivity(new Intent(getActivity(), SelectGenre.class));
 
                     // Toast.makeText(getActivity(), randTitle + " by " + randArtist, Toast.LENGTH_LONG).show();
 
 
+                }
+                else{
+                    //setRandArtistAndTitle();
+                    startActivity(new Intent(getActivity(), SelectGenre.class));
                 }
 
 

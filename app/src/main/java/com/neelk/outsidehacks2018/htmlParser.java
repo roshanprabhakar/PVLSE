@@ -22,6 +22,7 @@ public class htmlParser {
     public static void parseHTMLselectSONG(String html) {
         artists = new ArrayList<String>();
         titles = new ArrayList<String>();
+        genres = new ArrayList<String>();
 
         int count = 0;
         while (!html.equals("")) {
@@ -39,6 +40,11 @@ public class htmlParser {
             html = html.substring(html.indexOf("</td>"));
             html = html.substring(html.indexOf("a href="));
             titles.add(html.substring(html.indexOf(">") + 1, html.indexOf("<")).replace("\\", ""));
+            html = html.substring(html.indexOf("</td>"));
+            html = html.substring(html.indexOf("a href="));
+            html = html.substring(html.indexOf("</td>"));
+            html = html.substring(html.indexOf("a href="));
+            genres.add(html.substring(html.indexOf(">") + 1, html.indexOf("<")).replace("\\", ""));
 
             if (html.indexOf("<tr>") == -1) {
                 html = "";
@@ -47,11 +53,39 @@ public class htmlParser {
             count++;
         }
 
-        System.out.println(Math.random() + "     " + artists.size());
         randArtist = artists.get((int) (Math.random() * artists.size()));
         randTitle = titles.get(artists.indexOf(randArtist));
-        artists.clear();
-        titles.clear();
+        randGenre = genres.get(artists.indexOf(randArtist));
+    }
+
+    public static void randSongBasedOnGenres(ArrayList<String> selectedGenres) {
+
+        if (selectedGenres.size() != 0) {
+            String genre = selectedGenres.get((int) (Math.random() * selectedGenres.size()));
+
+            ArrayList<Integer> indexes = new ArrayList<Integer>();
+
+            for (int i = 0; i < genres.size(); i++) {
+                if (genre.equals(genres.get(i))) {
+                    indexes.add(i);
+                }
+            }
+
+            if (indexes.size() == 0) {
+                randArtist = artists.get((int) (Math.random() * artists.size()));
+                randTitle = titles.get(artists.indexOf(randArtist));
+                randGenre = genres.get(artists.indexOf(randArtist));
+            } else {
+                int randIndex = indexes.get((int) (Math.random() * indexes.size()));
+                randArtist = artists.get(randIndex);
+                randTitle = titles.get(randIndex);
+                randGenre = genre;
+            }
+        } else {
+            randArtist = artists.get((int) (Math.random() * artists.size()));
+            randTitle = titles.get(artists.indexOf(randArtist));
+            randGenre = genres.get(artists.indexOf(randArtist));
+        }
     }
 
     public static void randSelection(String inputFilename, String outputFilename) {

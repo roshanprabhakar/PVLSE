@@ -16,7 +16,8 @@
     <TextView
         android:id="@+id/welcome"
         android:layout_width="0dp"
-        android:layout_height="78dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="26dp"
         android:layout_marginEnd="7dp"
         android:layout_marginStart="7dp"
         android:layout_marginTop="42dp"
@@ -24,9 +25,43 @@
         android:gravity="center"
         android:text="Welcome!"
         android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/lastHeartBeatTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lastHeartBeatTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="375dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text=" "
+        android:textSize="40dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="301dp"
+        android:layout_height="390dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/heartlogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lastHeartBeatTextView"
+        app:layout_constraintStart_toEndOf="@+id/lastHeartBeatTextView"
+        app:layout_constraintTop_toBottomOf="@+id/lastHeartBeatTextView"
+        app:layout_constraintVertical_bias="1.0" />
+
+
 </android.support.constraint.ConstraintLayout>
 
 

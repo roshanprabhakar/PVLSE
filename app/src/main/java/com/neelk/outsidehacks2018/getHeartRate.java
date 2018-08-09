@@ -6,6 +6,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.SystemClock;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -82,7 +83,8 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
 
             if(event.values[0] < 1){
               //  Toast.makeText(getHeartRate.this, count + " Keep finger on heart rate sensor", Toast.LENGTH_LONG).show();
-                Snackbar.make(findViewById(R.id.constraintLayout), "Keep Finger on heart rate sensor", Snackbar.LENGTH_LONG).show();
+
+                Snackbar.make(findViewById(R.id.constraintLayout), "Looking for Heart Rate...", Snackbar.LENGTH_INDEFINITE).show();
             }
            else{
                 Toast.makeText(getHeartRate.this,"Success! Heart Rate is "  + measuredHeartRate + " BPM",Toast.LENGTH_SHORT).show();

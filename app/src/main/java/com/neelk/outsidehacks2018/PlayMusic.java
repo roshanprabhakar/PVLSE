@@ -17,6 +17,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import static com.neelk.outsidehacks2018.getLargeHtmlString.setRandArtistAndTitle;
 import static com.neelk.outsidehacks2018.htmlParser.randArtist;
+import static com.neelk.outsidehacks2018.htmlParser.randSongBasedOnGenres;
 import static com.neelk.outsidehacks2018.htmlParser.randTitle;
 
 public class PlayMusic extends YouTubeBaseActivity {
@@ -45,7 +46,6 @@ public class PlayMusic extends YouTubeBaseActivity {
         mp = MediaPlayer.create(PlayMusic.this, musicPath);
         apiKey = "AIzaSyD2sfk5EB8GiIOYP5-pdAFyMdk8xv4aPhw";
 
-
        // mp.start();
         isPlaying = true;
         initYoutube();
@@ -69,8 +69,8 @@ public class PlayMusic extends YouTubeBaseActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SelectGenre.clearSelectedGenres();
                 startActivity(new Intent(PlayMusic.this, Home.class));
-
             }
         });
 
@@ -78,7 +78,9 @@ public class PlayMusic extends YouTubeBaseActivity {
             @Override
             public void onClick(View view) {
                 setRandArtistAndTitle();
-
+                randSongBasedOnGenres(SelectGenre.getSelectedGenres());
+                initYoutube();
+                recreate();
             }
         });
 
