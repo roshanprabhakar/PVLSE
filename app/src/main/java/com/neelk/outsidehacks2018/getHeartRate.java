@@ -7,6 +7,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.SystemClock;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,18 +27,23 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
     public static int measuredHeartRate =0;
     private int count = 0;
     private Button back;
+    private long [] timings = {5,100};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_heart_rate);
 
-        System.out.println("In heartrate onCreate");
+
+
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        System.out.println("In heartrate onCreate " + sensorManager);
         heartRateSensor = sensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE);
-        System.out.println("In heartrate onCreate heartRateSensor " + heartRateSensor);
+      //  System.out.println("In heartrate onCreate heartRateSensor " + heartRateSensor);
  //       sensorManager.registerListener(mSensorEventListener, heartRateSensor, SensorManager.SENSOR_DELAY_FASTEST);
+
+
+
 
         //getHeartRate mGetHeartRate = new getHeartRate();
        // mGetHeartRate.mSensorEventListener.onSensorChanged();
@@ -85,6 +92,9 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
               //  Toast.makeText(getHeartRate.this, count + " Keep finger on heart rate sensor", Toast.LENGTH_LONG).show();
 
                 Snackbar.make(findViewById(R.id.constraintLayout), "Looking for Heart Rate...", Snackbar.LENGTH_INDEFINITE).show();
+                ((Vibrator) getSystemService(VIBRATOR_SERVICE)).vibrate(VibrationEffect.createOneShot(3000, 10));
+
+
             }
            else{
                 Toast.makeText(getHeartRate.this,"Success! Heart Rate is "  + measuredHeartRate + " BPM",Toast.LENGTH_SHORT).show();

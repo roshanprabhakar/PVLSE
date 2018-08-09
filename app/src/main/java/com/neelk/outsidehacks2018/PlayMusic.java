@@ -41,6 +41,7 @@ public class PlayMusic extends YouTubeBaseActivity {
         back = findViewById(R.id.backBtn);
         youTubePlayerView = findViewById(R.id.youtubePlayer);
         songNameTextView = (TextView) findViewById(R.id.musicTitleTextView);
+        randTitle.replace("&amp;", "&");
         songNameTextView.setText(randTitle + " by " + randArtist);
         musicPath = R.raw.sickomode;
         mp = MediaPlayer.create(PlayMusic.this, musicPath);
