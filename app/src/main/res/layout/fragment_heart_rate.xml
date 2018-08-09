@@ -25,7 +25,7 @@
         android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="14dp"
         android:fontFamily="@font/roboto_thin"
         android:gravity="center"
         android:text="Welcome!"
@@ -39,24 +39,24 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="103dp"
+        android:layout_marginTop="45dp"
         android:text="Measure Heart Rate"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playMusicButton" />
 
     <Button
         android:id="@+id/playMusicButton"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="38dp"
         android:text="Play Music"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/measureHeartRateButton"
-        app:layout_constraintStart_toStartOf="@+id/measureHeartRateButton" />
+        app:layout_constraintStart_toStartOf="@+id/measureHeartRateButton"
+        app:layout_constraintTop_toBottomOf="@+id/pressButtonTextView" />
 
 
 </android.support.constraint.ConstraintLayout>

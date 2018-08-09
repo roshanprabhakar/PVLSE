@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import static com.neelk.outsidehacks2018.HeartRateFragment.BPM;
+import static com.neelk.outsidehacks2018.getHeartRate.measuredHeartRate;
 
 
 public class HomeFragment extends Fragment {
@@ -45,8 +46,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
          lastHeartRate  = view.findViewById(R.id.lastHeartBeatTextView);
 
-        if(BPM != 0){
-            lastHeartRate.setText("Last Measured BPM: " + BPM);
+        if(getHeartRate.getMeasuredHeartRate() != 0){
+            lastHeartRate.setText("Last Measured BPM: " + measuredHeartRate);
         }
 
 

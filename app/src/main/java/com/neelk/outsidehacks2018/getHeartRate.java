@@ -22,7 +22,7 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
 
     private static SensorManager sensorManager;
     private static Sensor heartRateSensor;
-    private int measuredHeartRate;
+    public static int measuredHeartRate =0;
     private int count = 0;
     private Button back;
     @Override
@@ -99,6 +99,10 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
        @Override
        public void onAccuracyChanged(Sensor sensor, int i) {
 
+       }
+
+       public static int getMeasuredHeartRate(){
+        return measuredHeartRate;
        }
 
 //sensorManager = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
