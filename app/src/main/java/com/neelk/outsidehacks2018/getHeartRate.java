@@ -27,7 +27,6 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
     public static int measuredHeartRate =0;
     private int count = 0;
     private Button back;
-    private long [] timings = {5,100};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +91,6 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
               //  Toast.makeText(getHeartRate.this, count + " Keep finger on heart rate sensor", Toast.LENGTH_LONG).show();
 
                 Snackbar.make(findViewById(R.id.constraintLayout), "Looking for Heart Rate...", Snackbar.LENGTH_INDEFINITE).show();
-                ((Vibrator) getSystemService(VIBRATOR_SERVICE)).vibrate(VibrationEffect.createOneShot(3000, 10));
 
 
             }

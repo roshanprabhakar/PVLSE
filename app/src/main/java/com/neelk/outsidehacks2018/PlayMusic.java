@@ -22,15 +22,13 @@ import static com.neelk.outsidehacks2018.htmlParser.randTitle;
 
 public class PlayMusic extends YouTubeBaseActivity {
 
-    private boolean isPlaying;
-    private Button playPause;
+
     private TextView songNameTextView;
-    private int musicPath;
-    private MediaPlayer mp;
     private YouTubePlayerView youTubePlayerView;
     private String apiKey;
     private Button back;
     private Button nextSong;
+    private String formattedSongInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +39,14 @@ public class PlayMusic extends YouTubeBaseActivity {
         back = findViewById(R.id.backBtn);
         youTubePlayerView = findViewById(R.id.youtubePlayer);
         songNameTextView = (TextView) findViewById(R.id.musicTitleTextView);
-        randTitle.replace("&amp;", "&");
-        songNameTextView.setText(randTitle + " by " + randArtist);
-        musicPath = R.raw.sickomode;
-        mp = MediaPlayer.create(PlayMusic.this, musicPath);
+       formattedSongInfo = randTitle + " by " + randArtist;
+       formattedSongInfo.replaceAll("&amp", "and");
+        songNameTextView.setText(formattedSongInfo);
+
         apiKey = "AIzaSyD2sfk5EB8GiIOYP5-pdAFyMdk8xv4aPhw";
 
        // mp.start();
-        isPlaying = true;
+
         initYoutube();
 
        /* playPause.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +90,7 @@ public class PlayMusic extends YouTubeBaseActivity {
     public void onDestroy() {
 
         super.onDestroy();
-        mp.stop();
+
 
     }
 
