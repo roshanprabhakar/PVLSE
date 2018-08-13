@@ -1,4 +1,4 @@
-# PVLSE: The Bridge Between Your Heart and Music
+# PVLSE: The Bridge Between Your Heart and Music - Top 5 Hack at Outside Hacks 2018
 ## App Summary
 The basis behind the application *Pvlse* is to truly connect music listeners with their music using their heart rate. Initially designed for Twitch 
 streamers, whose emotional connection to livestream viewers is quite scarce, Pvlse has the ability to track a user's heart rate and play music 
