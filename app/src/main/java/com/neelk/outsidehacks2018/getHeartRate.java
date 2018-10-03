@@ -33,19 +33,9 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_heart_rate);
 
-
-
-
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         heartRateSensor = sensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE);
-      //  System.out.println("In heartrate onCreate heartRateSensor " + heartRateSensor);
- //       sensorManager.registerListener(mSensorEventListener, heartRateSensor, SensorManager.SENSOR_DELAY_FASTEST);
-
-
-
-
-        //getHeartRate mGetHeartRate = new getHeartRate();
-       // mGetHeartRate.mSensorEventListener.onSensorChanged();
+  
         back = findViewById(R.id.getHeartRateToHeartRateFragment);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,26 +47,14 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
 
 
     }
-
-//   SensorEventListener mSensorEventListener = new SensorEventListener() {
-
-       @Override
+     `@Override
         protected void onResume() {
-            // Register a listener for the sensor.
-            //getHeartRate.
-           System.out.println("onResume");
-
            super.onResume();
             sensorManager.registerListener(this, heartRateSensor, SensorManager.SENSOR_DELAY_FASTEST);
-
        }
-
         @Override
        protected void onPause(){
-            // Be sure to unregister the sensor when the activity pauses.
-            //getHeartRate.
             super.onPause();
-            System.out.println("onPause");
             sensorManager.unregisterListener((SensorEventListener) this);
         }
 
@@ -88,11 +66,7 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
             count++;
 
             if(event.values[0] < 1){
-              //  Toast.makeText(getHeartRate.this, count + " Keep finger on heart rate sensor", Toast.LENGTH_LONG).show();
-
                 Snackbar.make(findViewById(R.id.constraintLayout), "Looking for Heart Rate...", Snackbar.LENGTH_INDEFINITE).show();
-
-
             }
            else{
                 Toast.makeText(getHeartRate.this,"Success! Heart Rate is "  + measuredHeartRate + " BPM",Toast.LENGTH_SHORT).show();
@@ -113,9 +87,6 @@ public class getHeartRate extends AppCompatActivity implements SensorEventListen
         return measuredHeartRate;
        }
 
-//sensorManager = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
-//heartRateSensor = sensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE);
-    //};
 
 }
 
