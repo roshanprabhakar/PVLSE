@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-
 public class Settings extends Fragment {
 
     private Button logOut;
@@ -30,9 +29,6 @@ public class Settings extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // logOut = Objects.requireNonNull(getView()).findViewById(R.id.logOut);
-
 
     }
 
@@ -64,12 +60,8 @@ public class Settings extends Fragment {
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://github.com/neelkandlikar/OutsideHacks2018"));
                 startActivity(intent);
-
             }
         });
         return view;
-
     }
-
-
 }
