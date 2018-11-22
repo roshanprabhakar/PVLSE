@@ -28,3 +28,5 @@ this would create a need for change in the heart rate detection tool. A possible
 through the app every once in a while, which will be connected to the Twitch Extension in use. A third project could involve a sorting by year
 capability in the app, enabling the user to create a range for songs that are to be played. Furthermore, we seek to create more threads in order to handle network
 processes and improve speed.
+
+authors: Neel K, Roshan P, Rishi D, Sohil N
